@@ -80,7 +80,9 @@ function frequency(string) {
   var obj ={};
   var caracter;
   var contador = 0;
+  // Se convierte cada caracter del string en un elemento del arreglo
   var array = Array.from(string);
+  // Se ordena el arreglo alfabeticamente
   var arrayOrd = array.sort();
   for (let i = 0; i < arrayOrd.length; i++) {
       caracter = arrayOrd[i];
@@ -89,9 +91,9 @@ function frequency(string) {
           contador ++;
         }
       }
-      if (arrayOrd[i+1] !== arrayOrd[i]){
-          obj [arrayOrd[i]] = contador;
-      }
+    /* Se asigna como propiedad del objeto el caracter que se está evaluando
+       y se le asigna como valor la frecuencia del caracter dentro del arreglo */ 
+      obj [arrayOrd[i]] = contador;
       contador = 0;
   }
   return obj;
