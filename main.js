@@ -11,20 +11,21 @@
  * deepEqual
  */
 function deepEqual(a,b) {  
-  //se compara la longitud a y b y si es distinto retorna false
+  //Comparamos la longitud de las variables a y b, si la longitud es distinta, retorna false.
    if(Object.keys(a).length !== Object.keys(b).length){ 
      return false;
    }
-   //checa si a y b son objetos
+   //Compara si las variables a y b son del mismo tipo de dato. 
    if(typeof(a) === typeof(b)){
-    //se hace un ciclo para poder interar en los balores de a o en en la posision key1
+    //Se realiza un ciclo para poder interar en los valores de a y compara si los valores coinciden en cada posición
+    // con los valores de b.
    for( const key1 in a){  
         if(a[key1] !== b[key1]){
           return false;
         }
      }
    }
-   // si pasa los dos filtros quiere desir que son iguales
+   //Retorna true, si pasa por los dos filtros. 
    return true;
  }
 
@@ -32,6 +33,7 @@ var john = {
   firstName: 'John',
   lastName: 'Doe'
 }
+
 console.log('Test 1:', deepEqual(1, 1)) // true
 console.log('Test 2:', deepEqual(1, '1')) // false
 console.log('Test 3:', deepEqual(john, john)) // true
@@ -44,26 +46,26 @@ console.log('Test 5:', deepEqual(john, { firstName: 'John' })) // false
  * chuck
  */
 function chunck(array, size){
-  // se crea una variable tipo objeto para cuardar el resultado
+  // Se crea una variable de tipo objeto para guardar el resultado. 
   var res = [];
   /**
-   * el ciclo dice que mientras i sea menor a la longitud del areglo entonces seguira,
-   *  "i" aumentara su valor actual mas lo grande que desea ser el areglo
+   * Creamos un ciclo en el cual mientras i sea menor a la longitud del arreglo seguira iterando,
+   *  "i" aumentando su valor actual más el tamaño del arreglo.
+   * 
+   * "i += size" se aplica porque asi la siguiente iteración no sera el valor de i + 1
+   * la nueva iteración es definida entonces por el valor de lo grande que quieras que sea
+   * cada arreglo determinada por el parametro "size".
    * */ 
   for (let i = 0; i < array.length; i += size) {
     /**
-     * se agrega a el areglo el valor que hay en el areglo original("array") de dicho areglo se
-     * le aplica la funcion slice que genera un nuevo areglo sin afectar el areglo original
+     * Se agrega a el arreglo res el valor que hay en el arreglo original("array") y
+     * se aplica la funcion slice que genera un nuevo arreglo sin afectar el arreglo original
      * slice toma dos parametros, (inicio, fin) entonces toma el valor que contenga i en ese momento
-     * como inicio y el final como el valor que tenga i en ese momento + lo grande del areglo
-     * 
-     * "i += size" se aplica porque asi la siguiente interacion no sera el valor de i + 1
-     * la nueva interacion es definida entonces por elvalor de lo grande que quieras que sea
-     * cada areglo determinada por el parametro "size"
+     * como inicio y el final como "i + size".
      */
     res.push(array.slice(i, i + size));    
   }
-  //retorna como respuesta lo que tenga dentro del arrar res
+  //Retorna como respuesta lo que tenga dentro del arreglo res.
   return res;
 }
 
