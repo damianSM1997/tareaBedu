@@ -54,9 +54,10 @@ function chunck(array, size){
 }
 
 var data = [1,2,3,4,5,6,7,8,9];
-console.log('Test 1: ' , chunck(data, 1));
-console.log('Test 2: ' , chunck(data, 2));
-console.log('Test 3: ' , chunck(data, 3));
+
+console.log('Test 1:', chunk(data, 1)) // [[1], [2], [3], [4], [5], [6], [7], [8]]
+console.log('Test 2:', chunk(data, 2)) // [[1, 2], [3, 4], [5, 6], [7, 8]]
+console.log('Test 3:', chunk(data, 3)) // [[1, 2, 3], [4, 5, 6], [7, 8]]
 ```
 
 ![imgGitHub](https://github.com/damianSM1997/tareaBedu/blob/master/img/ejercicio2.png)
