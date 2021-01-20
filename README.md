@@ -40,7 +40,7 @@ console.log('Test 3:', deepEqual(john, john)) // true
 console.log('Test 4:', deepEqual(john, { firstName: 'John', lastName: 'Doe' })) // true
 console.log('Test 5:', deepEqual(john, { firstName: 'John' })) // false
 ```
-![imgGitHub](https://user-images.githubusercontent.com/29550322/89142581-71dfb980-d50d-11ea-8e2e-782c9745ff23.jpg)
+![imgGitHub]()
 
 ## Ejercicio 2
 
@@ -58,6 +58,8 @@ console.log('Test 1: ' , chunck(data, 1));
 console.log('Test 2: ' , chunck(data, 2));
 console.log('Test 3: ' , chunck(data, 3));
 ```
+
+![imgGitHub]()
 
 ## Ejercicio 3
 
@@ -78,9 +80,9 @@ function frequency(string) {
           contador ++;
         }
       }
-      if (arrayOrd[i+1] !== arrayOrd[i]){
-          obj [arrayOrd[i]] = contador;
-      }
+     
+      obj [arrayOrd[i]] = contador;
+      
       contador = 0;
   }
   return obj;
@@ -93,6 +95,9 @@ console.log('Test 2:', frequency('www.bedu.org'))
 console.log('Test 3:', frequency('john.doe@domain.com'))
 // {.: 2, @: 1, a: 1, c: 1, d: 2, e: 1, h: 1, i: 1, j: 1, m: 2, n: 2, o: 4}
 ```
+
+![imgGitHub]()
+
 
 opción 2
 ```javascript
