@@ -1,7 +1,7 @@
 # Postwork 
 Postwork 1
 
-Equipo numero 
+Equipo numero 20
 
 Integrantes:
 - Jorge Ivan Gutierrez Yañez
