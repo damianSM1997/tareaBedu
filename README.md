@@ -59,7 +59,7 @@ console.log('Test 2: ' , chunck(data, 2));
 console.log('Test 3: ' , chunck(data, 3));
 ```
 
-![imgGitHub]()
+![imgGitHub](https://github.com/damianSM1997/tareaBedu/blob/master/img/ejercicio2.png)
 
 ## Ejercicio 3
 
@@ -96,7 +96,7 @@ console.log('Test 3:', frequency('john.doe@domain.com'))
 // {.: 2, @: 1, a: 1, c: 1, d: 2, e: 1, h: 1, i: 1, j: 1, m: 2, n: 2, o: 4}
 ```
 
-![imgGitHub]()
+![imgGitHub](https://github.com/damianSM1997/tareaBedu/blob/master/img/ejercicio3.png)
 
 
 opción 2
