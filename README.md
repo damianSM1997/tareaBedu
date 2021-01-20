@@ -10,7 +10,9 @@ Integrantes:
 - Anahi Camas Hernández 
 - Damian Susano Martinez 
 
-Ejercicio 1
+
+
+##Ejercicio 1
 
 ```javascript
 function frequency(string) {
@@ -45,7 +47,7 @@ console.log('Test 3:', frequency('john.doe@domain.com'))
 // {.: 2, @: 1, a: 1, c: 1, d: 2, e: 1, h: 1, i: 1, j: 1, m: 2, n: 2, o: 4}
 ```
 
-Ejercicio 2
+##Ejercicio 2
 
 ```javascript
 function chunck(array, size){
@@ -62,7 +64,7 @@ console.log('Test 2: ' , chunck(data, 2));
 console.log('Test 3: ' , chunck(data, 3));
 ```
 
-Ejercicio 3
+##Ejercicio 3
 
 opción 1
 
