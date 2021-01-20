@@ -15,36 +15,30 @@ Integrantes:
 ## Ejercicio 1
 
 ```javascript
-function frequency(string) {
-  var obj ={};
-  var caracter;
-  var contador = 0;
-  var array = Array.from(string);
-  var arrayOrd = array.sort();
-
-  for (let i = 0; i < arrayOrd.length; i++) {
-      caracter = arrayOrd[i];
-      for (let j = 0; j < arrayOrd.length; j++) {
-        if(arrayOrd[j] === caracter){
-          contador ++;
+function deepEqual(a,b) {  
+   if(Object.keys(a).length !== Object.keys(b).length){ 
+     return false;
+   }
+   if(typeof(a) === typeof(b)){
+   for( const key1 in a){  
+        if(a[key1] !== b[key1]){
+          return false;
         }
-      }
-      if (arrayOrd[i+1] !== arrayOrd[i]){
-          obj [arrayOrd[i]] = contador;
-      }
-      contador = 0;
-  }
-  return obj;
- 
+     }
+   }
+
+   return true;
  }
 
-
-console.log('Test 1:', frequency('cccbbbaaa'))
-// {a: 3, b: 3, c: 3}
-console.log('Test 2:', frequency('www.bedu.org'))
-// {.: 2, b: 1, d: 1, e: 1, g: 1, o: 1, r: 1, u: 1, w: 3}
-console.log('Test 3:', frequency('john.doe@domain.com'))
-// {.: 2, @: 1, a: 1, c: 1, d: 2, e: 1, h: 1, i: 1, j: 1, m: 2, n: 2, o: 4}
+var john = {
+  firstName: 'John',
+  lastName: 'Doe'
+}
+console.log('Test 1:', deepEqual(1, 1)) // true
+console.log('Test 2:', deepEqual(1, '1')) // false
+console.log('Test 3:', deepEqual(john, john)) // true
+console.log('Test 4:', deepEqual(john, { firstName: 'John', lastName: 'Doe' })) // true
+console.log('Test 5:', deepEqual(john, { firstName: 'John' })) // false
 ```
 
 ## Ejercicio 2
