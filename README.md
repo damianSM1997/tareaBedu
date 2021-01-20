@@ -40,6 +40,7 @@ console.log('Test 3:', deepEqual(john, john)) // true
 console.log('Test 4:', deepEqual(john, { firstName: 'John', lastName: 'Doe' })) // true
 console.log('Test 5:', deepEqual(john, { firstName: 'John' })) // false
 ```
+![imgGitHub](https://user-images.githubusercontent.com/29550322/89142581-71dfb980-d50d-11ea-8e2e-782c9745ff23.jpg)
 
 ## Ejercicio 2
 
