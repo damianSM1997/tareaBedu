@@ -10,24 +10,56 @@
 /**
  * deepEqual
  */
-function deepEqual(a,b) {  
-  //Comparamos la longitud de las variables a y b, si la longitud es distinta, retorna false.
-   if(Object.keys(a).length !== Object.keys(b).length){ 
-     return false;
-   }
-   //Compara si las variables a y b son del mismo tipo de dato. 
-   if(typeof(a) === typeof(b)){
+function deepEqual(a,b) {
+  //Comparamos si a y b son iguales
+  if(a === b){
+    return true
+  }  
+
+  //Comparamos si a y b son de tipo object
+  if(typeof(a) && typeof(b) === 'object'){
+    a = changeValue(a)
+    b = changeValue(b)
+
+    keys1 = Object.keys(a);
+    keys2 = Object.keys(b);
+
+    //Comparamos la longitud de las variables a y b, si la longitud es distinta, retorna false.
+    if(keys1.length !== keys2.length){
+      return false
+    }
     //Se realiza un ciclo para poder interar en los valores de a y compara si los valores coinciden en cada posición
     // con los valores de b.
-   for( const key1 in a){  
-        if(a[key1] !== b[key1]){
-          return false;
-        }
-     }
-   }
-   //Retorna true, si pasa por los dos filtros. 
-   return true;
+    for(var key of keys1){
+      if( deepEqual(a[key],b[key])){
+          return true
+      } else {
+          return false
+      }
+    }
+  }
+  
+  //Comparamos si a y b son distintos
+   if( a !== b){
+    return false
+  }
  }
+
+ //Se crea una funcion para cambiar el valor al elemento
+ function changeValue(element){
+   // Si el valor del elemento es undefined regresa un string
+  if (element == undefined){
+      return 'undefined'
+  }
+  // Si el valor del elemento es null o un objeto vacio regresaremos su valor en string 
+  else if(element == null || Object.keys(element).length === 0){
+      return JSON.stringify(element)
+  }
+  // Si ninguna de las condiciones anteriores se cumple no realizara ningun cambio a dicho elemento
+  else {
+      return element
+  }
+}
 
 var john = {
   firstName: 'John',
@@ -39,6 +71,9 @@ console.log('Test 2:', deepEqual(1, '1')) // false
 console.log('Test 3:', deepEqual(john, john)) // true
 console.log('Test 4:', deepEqual(john, { firstName: 'John', lastName: 'Doe' })) // true
 console.log('Test 5:', deepEqual(john, { firstName: 'John' })) // false
+console.log('Test 6:', deepEqual(1, {})) // false
+console.log('Test 7:', deepEqual(null, {})) // false
+
 
 
 /**
